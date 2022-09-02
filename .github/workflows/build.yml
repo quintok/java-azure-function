@@ -35,3 +35,7 @@ jobs:
           key: ${{ runner.os }}-terraform-${{ hashFiles('**/.terraform.lock.hcl') }}
           restore-keys: |
             ${{ runner.os }}-terraform-
+      - name: Run Terraform
+        run: |
+          make infra-prep
+          make plan
